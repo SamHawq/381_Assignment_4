@@ -7,9 +7,9 @@ import Footer from '../components/Footer';
 function Home() {
     return (
         <div>
-        <Header />
-        <HomeMainSection />
-        <Footer />
+            <Header />
+            <HomeMainSection />
+            <Footer />
         </div>
     );
 }
