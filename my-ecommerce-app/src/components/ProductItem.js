@@ -9,7 +9,7 @@ const ProductItem = ({ product, addToCart }) => {
 
   return (
     <div className="product-item">
-      <img src={'/'+product.image} alt={product.name} />
+      <img src={'/'+product.image} alt={product.name} style={{ maxWidth: '200px' }} />
       <h3 onMouseEnter={toggleDetails} onMouseLeave={toggleDetails}>{product.name}</h3>
       <p>Price: {product.price}</p>
       <button onClick={() => addToCart(product)}>Add to Cart</button>

@@ -3,7 +3,7 @@ import React from 'react';
 const CartItem = ({ item, removeFromCart }) => {
   return (
     <div className="cart-item">
-      <img src={'/'+item.image} alt={item.name}/>
+      <img src={'/'+item.image} alt={item.name}  style={{ maxWidth: '200px' }}/>
       <p>{item.name}</p>
       <p>{item.price}</p>
       <p>Quantity: {item.quantity}</p>

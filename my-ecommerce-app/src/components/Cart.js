@@ -4,7 +4,7 @@ import CartItem from './CartItem';
 const Cart = ({ cart, removeFromCart }) => {
   return (
     <div className="cart">
-      <h2>Cart</h2>
+      <h2>Shopping Cart</h2>
       {cart.map((item, index) => (
         <CartItem key={index} item={item} removeFromCart={removeFromCart} />
       ))}
