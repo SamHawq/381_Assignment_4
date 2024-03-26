@@ -5,10 +5,20 @@ const imagePath = '/images/logo.png';
 function Header() {
     return (
         <div className="App-header">
-            <img src={imagePath} className="App-logo" alt="logo" />
-            <h3 className="header-txt">
-            Company Name
-            </h3>
+            <div className="header-content">
+                <img src={imagePath} className="App-logo" alt="logo" />
+                <div className="company-name">
+                    <h3 className="header-txt">
+                        Company Name
+                    </h3>
+                </div>
+            </div>
+
+            <section className="navigation">
+                <a href='/'> Home </a>
+                <a href='/Products'> Products </a>
+                <a href='/Login'> Login </a>
+            </section>
         </div>
     );
 }

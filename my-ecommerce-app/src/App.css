@@ -12,9 +12,8 @@
 
 
 .App-header {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .App-link {
@@ -24,4 +23,15 @@
 .navigation {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px; 
+}
+
+.header-txt {
+  margin: 0; 
 }

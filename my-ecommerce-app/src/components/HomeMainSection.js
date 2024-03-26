@@ -45,11 +45,7 @@ function HomeMainSection() {
     return (
         <div className="home-main-section">
 
-        <section className="navigation">
-            <a href='/'> Home </a>
-            <a href='/Products'> Products </a>
-            <a href='/Login'> Login </a>
-        </section>
+       
 
         <section className='About-us'>
             <h2>About Us</h2>
