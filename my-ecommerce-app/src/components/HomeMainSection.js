@@ -47,7 +47,7 @@ function HomeMainSection() {
 
         <section className="navigation">
             <a href='/'> Home </a>
-            <a href='/Products'> Products </a>
+            <a href='/components/ProductPage'> Products </a>
             <a href='/Login'> Login </a>
         </section>
 
