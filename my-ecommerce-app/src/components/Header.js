@@ -8,9 +8,9 @@ function Header() {
             <div className="header-content">
                 <img src={imagePath} className="App-logo" alt="logo" />
                 <div className="company-name">
-                    <h3 className="header-txt">
+                    <p className="header-txt">
                         Company Name
-                    </h3>
+                    </p>
                 </div>
             </div>
 
