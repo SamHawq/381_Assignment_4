@@ -6,14 +6,11 @@ import Footer from './Footer';
 import './product.css';
 
 const ProductPage = () => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() =>{
+    const savedCart =JSON.parse(localStorage.getItem('cart'));
+    return Array.isArray(savedCart) ? savedCart : [];
+  });
 
-  useEffect(() => {
-    const savedCart = JSON.parse(localStorage.getItem('cart'));
-    if (savedCart) {
-      setCart(savedCart);
-    }
-  }, []);
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
