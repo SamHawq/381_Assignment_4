@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-//import Header from './Header';
+import Header from './Header';
 import ProductList from './ProductList';
 import Cart from './Cart';
-//import Footer from './Footer';
+import Footer from './Footer';
+import './product.css';
 
 const ProductPage = () => {
   const [cart, setCart] = useState([]);
@@ -39,20 +40,14 @@ const ProductPage = () => {
 
   return (
     <div className="product-page"> 
-    {/*
       <Header /> 
-      */}
       <table>
-        <tbody>
           <tr>
             <td><ProductList addToCart={addToCart} /></td>
             <td style={{ verticalAlign: 'top' }}><Cart cart={cart} removeFromCart={removeFromCart} /></td>
           </tr>
-        </tbody>
-      </table>
-      {/*
+      </table>  
       <Footer />
-      */}
     </div>
   );
 };

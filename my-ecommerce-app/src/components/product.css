@@ -1,0 +1,11 @@
+.product-page{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
