@@ -1,5 +1,6 @@
 import React from 'react';
 import CartItem from './CartItem';
+import './product.css';
 
 const Cart = ({ cart, removeFromCart }) => {
   return (
