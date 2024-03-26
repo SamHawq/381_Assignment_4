@@ -1,1 +1,1 @@
-wtf do i put in here
+npm install react-scripts 
