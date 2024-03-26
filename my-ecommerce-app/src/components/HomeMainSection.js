@@ -23,7 +23,7 @@ function HomeMainSection() {
     }, []);
 
     function handleShopNow(){
-        navigate("/Products");
+        navigate("/components/ProductPage");
     }
 
     let reviewContent = null;
@@ -44,8 +44,6 @@ function HomeMainSection() {
 
     return (
         <div className="home-main-section">
-
-       
 
         <section className='About-us'>
             <h2>About Us</h2>
