@@ -2,6 +2,14 @@ import React from 'react';
 import CartItem from './CartItem';
 import './product.css';
 
+const calculateTotal = (cart) => {
+  let total = 0;
+  cart.forEach(item => {
+    total += item.price * item.quantity;
+  });
+  return total;
+};
+
 const Cart = ({ cart, removeFromCart }) => {
   return (
     <div className="cart">
@@ -14,12 +22,6 @@ const Cart = ({ cart, removeFromCart }) => {
   );
 };
 
-const calculateTotal = (cart) => {
-  let total = 0;
-  cart.forEach(item => {
-    total += item.price * item.quantity;
-  });
-  return total;
-};
+
 
 export default Cart;
