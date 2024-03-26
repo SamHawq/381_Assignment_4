@@ -2,16 +2,15 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css';
 import React from 'react';
 import Home from './Home';
-import Products from './Products'
 import Login from './Login'
-
+import ProductPage from './components/ProductPage';
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Products" element={<Products />} />
+        <Route path="/components/ProductPage" element={<ProductPage />} />
         <Route path="/Login" element={<Login />} />
     </Routes>
     </BrowserRouter>
@@ -20,3 +19,4 @@ function App() {
 }
 
 export default App;
+
