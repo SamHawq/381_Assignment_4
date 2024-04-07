@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const LoginForm = ({ switchToSignup, Authentication }) => {
+const LoginForm = ({ switchToSignup}) => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     username: '',
@@ -20,7 +20,6 @@ const LoginForm = ({ switchToSignup, Authentication }) => {
   
     if (!formData.username || !formData.password) {
       setFormError('Please fill in all fields');
-      Authentication(false)
       return;
     }
   

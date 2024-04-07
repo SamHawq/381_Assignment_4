@@ -9,8 +9,7 @@ const SignupForm = ({ switchToLogin }) => {
     confirmPassword: '',
     email: ''
   });
-  const [formError, setFormError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
+  const [formMes, setFormMes] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,23 +21,23 @@ const SignupForm = ({ switchToLogin }) => {
   
     for (const key in formData) {
       if (!formData[key]) {
-        setFormError('All fields required');
+        setFormMes('All fields required');
         return;
       }
     }
   
     if (formData.password !== formData.confirmPassword) {
-      setFormError('Passwords do not match');
+      setFormMes('Passwords do not match');
       return;
     }
   
-    setFormError('');
+    setFormMes('');
     try {
       const response = await axios.post('http://localhost:5000/SignupForm', formData);
       console.log('Response:', response); // Log the entire response object
       const responseData = response.data || {}; // Ensure responseData is an object
       console.log('Response data:', responseData); // Log the data property or an empty object
-      setSuccessMessage('User signed up successfully!');
+      setFormMes('User signed up successfully!');
       setFormData({
         username: '',
         password: '',
@@ -47,7 +46,7 @@ const SignupForm = ({ switchToLogin }) => {
       });
     } catch (error) {
       console.error('Signup error:', error.response.data); 
-      setFormError('Failed to signup');
+      setFormMes('Username already taken');
     }
   }
 
@@ -56,8 +55,7 @@ const SignupForm = ({ switchToLogin }) => {
       <h2>Signup</h2>
       
       <div>
-      {formError && <p style={{ color: 'red' }}>{formError}</p>}
-      {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+      {formMes && <p style={{ color: 'red' }}>{formMes}</p>}
         <label htmlFor="signup-username">Username</label>
         <input type="text" id="signup-username" name="username" value={formData.username} onChange={handleChange} placeholder="Username" />
       </div>
