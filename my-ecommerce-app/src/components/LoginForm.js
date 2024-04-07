@@ -32,7 +32,10 @@ const LoginForm = ({ switchToSignup, Authentication }) => {
     } catch (error) {
       console.error('Login error:', error.response.data); // Log error response
       setFormError('Incorrect username or password'); // Set form error message
-      Authentication(false)
+      setFormData({
+        username: '',
+        password: ''
+      });
     }
   }  
   
