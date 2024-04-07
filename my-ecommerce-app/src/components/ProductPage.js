@@ -11,6 +11,7 @@ const ProductPage = () => {
     return Array.isArray(savedCart) ? savedCart : [];
   });
 
+  const [hoveredProduct, setHoveredProduct] = useState(null);
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -40,7 +41,13 @@ const ProductPage = () => {
       <Header /> 
       <table>
           <tr>
-            <td><ProductList addToCart={addToCart} /></td>
+            <td>
+              <ProductList 
+                addToCart={addToCart} 
+                setHoveredProduct={setHoveredProduct}
+                hoveredProduct={hoveredProduct}
+              />
+            </td>
             <td style={{ verticalAlign: 'top' }}><Cart cart={cart} removeFromCart={removeFromCart} /></td>
           </tr>
       </table>  
