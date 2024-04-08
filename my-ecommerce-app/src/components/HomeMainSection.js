@@ -23,7 +23,7 @@ function HomeMainSection() {
     }, []);
 
     function handleShopNow(){
-        navigate("/components/ProductPage");
+        navigate("/products");
     }
 
     let reviewContent = null;
