@@ -1,5 +1,7 @@
 import React from 'react';
 import '../App.css';
+import { Link } from 'react-router-dom';
+
 const imagePath = '/images/logo.png';
 
 function Header() {
@@ -15,9 +17,9 @@ function Header() {
             </div>
 
             <section className="navigation">
-                <a href='/'> Home </a>
-                <a href='/components/ProductPage'> Products </a>
-                <a href='/Login'> Login </a>
+                <Link to="/">Home</Link>
+                <Link to="/products">Products</Link>
+                <Link to="/login">Login</Link>
             </section>
         </div>
     );

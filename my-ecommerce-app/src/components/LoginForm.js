@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const LoginForm = ({ switchToSignup}) => {
+const LoginForm = ({ switchToSignup, setIsAuthenticated}) => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     username: '',
@@ -26,17 +26,27 @@ const LoginForm = ({ switchToSignup}) => {
     try {
       const response = await axios.post('http://localhost:5000/Login', formData);
       console.log(response.data); 
-      localStorage.setItem('authenticated', true); 
-      navigate('../components/ProductPage')
-    } catch (error) {
-      console.error('Login error:', error.response.data); // Log error response
-      setFormError('Incorrect username or password'); // Set form error message
-      setFormData({
-        username: '',
-        password: ''
-      });
+      localStorage.setItem("isLoggedIn", "true");
+      setIsAuthenticated(true);
+      navigate('/products')
+      } catch (error) {
+        if (error.response && error.response.data) {
+          console.error('Login error:', error.response.data); // Log error response data
+          setFormError('Incorrect username or password'); // Set form error message
+        } else {
+          console.error('Login error:', error.message); // Log error message
+          setFormError('An error occurred while logging in'); // Set generic error message
+        }
+      
+        localStorage.removeItem("isLoggedIn");
+        setIsAuthenticated(false);
+        setFormData({
+          username: '',
+          password: ''
+        });
+      }
     }
-  }  
+  
   
 
   return (
